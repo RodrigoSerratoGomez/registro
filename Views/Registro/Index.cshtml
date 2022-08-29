@@ -1,0 +1,32 @@
+@model registro.Models.Registro
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>¡Bienvenido al Portal de Matricula!</h1><br>
+
+    @using (Html.BeginForm("Calcular", "Registro", FormMethod.Post))
+    {
+        <div class="form-group">
+            <b>Seleccionar Cursos a Matricularse:</b><br>
+            @Html.CheckBox("Matematica",false)<span> Matematica</span><br>
+            @Html.CheckBox("Lenguaje", false)<span> Lenguaje</span><br>
+            @Html.CheckBox("Historia", false)<span> Historia</span><br>
+            <br>
+            <button type="submit" class="btn btn-primary">Confirmar Matricula</button>
+        </div>
+        <br><hr><br>
+        <h3>@ViewData["Message-1"]</h3>
+        <h3>@ViewData["Message-2"]</h3>
+        <h3>@ViewData["Message-3"]</h3>
+    }
+</body>
+
+</html>
